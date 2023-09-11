@@ -1,0 +1,77 @@
+---
+title: "Projeto_cultural_UFF"
+output: html_document
+date: "2023-09-11"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE,message=FALSE}
+library(readxl)
+library(janitor)
+espetaculo <- read_excel("C:/Users/08451589707/Desktop/pasta_pessoal/LA_UFF/ECOA Niterói - Artes do Espetáculo (respostas).xlsx") %>% clean_names()
+#str(espetaculo)
+
+#table(espetaculo$autoriza_o_uso_da_informacao_para_finalidade_academica_e_cientifica)
+#names(espetaculo)
+
+espetaculo = espetaculo[,4:48]
+
+
+nomes = c("id_genero",                                                                                                                                                                                                                                                      
+"id_raca",                                                                                                                                                                                                                                                                                                                         
+"deficiencia",                                                                                                                                                                                                                                                                                                                                    
+"faixa_etaria",                                                                                                                                                                                                                                                                                                                             
+"escolaridade",                                                                                                                                                                                                                                                                                                                                     
+"renda_media",                                                                                                                                                                                                                                
+"cidade_nasceu",                                                                                                                                                                                                                                                                        
+"mora_trabalha_em_niteroi",                                                                                                                                                                                                                                                                                                                           
+"qual_seu_bairro",                                                                                                                                                                                                                                                                                                                                                   
+"categoria",                                                                                                                                                                                                                                                             
+"area_de_atuacao_no_campo_da_cultura",                                                                                                                                                                                                                                                                                                          
+"voce_pode_especificar_sua_area",                                                                                                                                                                                                                                        
+"qual_e_sua_ocupacao_dentro_desta_area",                                                                                                                                                                                                                                                
+"ha_quanto_tempo_voce_atua_nessa_area",                                                                                                                                                                                                                                                                                                                              
+"faz_parte_de_algum_grupo_artistico",                                                                                                                                                                                                                                                                                                                                
+"qual_o_nome_do_grupo_artistico",                                                                                                                                                                                            
+"ha_quanto_tempo_esse_grupo_existe",                                                                                                                                                                                                                                                                                                                                 
+"ha_quanto_tempo_voce_participa_desse_grupo",                                                                                                                                                                                                                                                                                                                        
+"com_quais_linguagens_esse_grupo_trabalha",
+"ha_financiamento",                                                                                                                                                                                                                                                                                                                       
+"motivacao_insercao_profissional_na_area_cultural",                                                                                                                                                                                                                                                                                    
+"carga_de_trabalho_semanal_na_area_cultural",                                                                                                                                                                                                                             
+"vinculo_trabalhista_na_area_cultural",                                                                                                                                                                                                                                                                          
+"todos_os_seus_trabalhos_cultural_se_firmam_contrato",                                                                                                                                                                                                                                                                                           
+"trabalho_desrespeitados",                                                                                                                                                                                                                                                                                                
+"exclusivamente_na_area_cultural",                                                                                                                                                                                                                                                                                                                     
+"qual_e_a_sua_outra_area_de_ocupacao",                                                                                                                                                                                                                                          
+"qual_e_a_sua_carga_de_trabalho_semanal_em_outra_area",                                                                                                                                                                                                                                                                                         
+"outra_area_ocupacao_vinculo_trabalhista",                                                                                                                                                                                                                                                                                                
+"voce_contribui_para_o_inss",                                                                                                                                                                                                                                                                                                          
+"voce_contribui_para_a_previdencia_privada",                                                                                                                                                                                                                                                   
+"qual_ou_quais_desses_beneficios_voce_recebe",                                                                                                                                                                                                                                                                                    
+"voce_possui_plano_de_saude",                                                                                                                                                                                                                                                                                                                                        
+"voce_participa_de_organizacao_de_classe_na_cultura",                                                                                                                                                                                                                                                                                                 
+"como_voce_avalia_instalacoes_fisicas_cultural",                                                                                                                                                                 
+"relacoes_de_trabalho_foram_afetadas_durante_a_pandemia",                                                                                                                                                                                                                                                                                                    
+"a_pandemia_afetou_carga_horaria_trabalho_na_cultura",                                                                                                                                                                                                                                                                                     
+"a_pandemia_afetou_sua_vida_financeira",                                                                                                                                                                                                                                                                                                
+"pandemia_foi_necessario_complementar_sua_renda",                                                                                                                                                                                                                                                                                                
+"complementar_renda_como_fez",                                                                                                                                                                                                                                                                         
+"auxilio_emergencial_e_edital",                                                                                                                                                                                                                                                     
+"redes_digitais_impactos_cultural_pandemia_covid_19",
+"dificuldade_em_seu_trabalho_na_area_da_cultura",                                                                                                                                                                                                                                                                                    
+"maior_potencial_em_seu_trabalho_na_area_da_cultura",
+"sugestao")   
+
+NOMES_COMPLETO = names(espetaculo)
+
+colnames(espetaculo) = nomes
+
+library(rpivotTable)
+rpivotTable(espetaculo)
+
+```
+
