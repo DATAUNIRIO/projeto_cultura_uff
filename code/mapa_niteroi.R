@@ -1,3 +1,5 @@
+library(leaflet.providers)
+str(providers_default()$providers_details, max.level = 2)
 
 
 library(geojsonio)
@@ -17,6 +19,8 @@ labels <- sprintf(
 ) %>% lapply(htmltools::HTML)
 
 leaflet(bairros_niteroi) %>%
+  addTiles() |>
+  addProviderTiles("Esri.WorldImagery") %>%
   #setView(-96, 37.8, 4) %>%
   addPolygons(
     fillColor = ~pal(Shape__Area),
