@@ -1,0 +1,66 @@
+Região Praias da Baía
+
+    Bairro de Fátima
+    Boa Viagem
+    Cachoeiras
+    Centro
+    Charitas
+    Gragoatá
+    Icaraí
+    Ingá
+    Jurujuba
+    Morro do Estado
+    Pé Pequeno
+    Ponta d’Areia
+    Santa Rosa
+    São Domingos
+    São Francisco
+    Viradouro
+    Vital Brazil
+
+Região Norte
+
+    Baldeador
+    Barreto
+    Caramujo
+    Cubango
+    Engenhoca
+    Fonseca
+    Ilha da Conceição
+    Santa Bárbara
+    Santana
+    São Lourenço
+    Tenente Jardim
+    Viçoso Jardim
+
+Região Oceânica
+
+    Cafubá
+    Camboinhas
+    Engenho do Mato
+    Itacoatiara
+    Itaipu
+    Jacaré
+    Jardim Imbuí
+    Maravista
+    Piratininga
+    Santo Antônio
+    Serra Grande
+
+Região Pendotiba
+
+    Badu
+    Cantagalo
+    Ititioca
+    Largo da Batalha
+    Maceió
+    Maria Paula
+    Matapaca
+    Sapê
+    Vila Progresso
+
+Região Leste
+
+    Muriqui
+    Rio do Ouro
+    Várzea das Moças
