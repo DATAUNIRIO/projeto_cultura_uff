@@ -11,7 +11,7 @@ tabela_av = data.frame(table(artes_visuais$id_raca))
 tabela_espetaculo = data.frame(table(espetaculo$id_raca))
 
 tabela_av$tipo= rep("artes visuais",4)
-tabela_espetaculo$tipo= rep("espetáculo",4)
+tabela_espetaculo$tipo= rep("espetáculo",7)
 
 # Combine data.frames
 all_df <- rbind(cbind(tabela_av, facet = "Artes Visuais"),
