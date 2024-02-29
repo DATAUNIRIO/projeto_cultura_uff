@@ -59,6 +59,33 @@ ecoar_theme <- function() {
 
 
 
+ecoar_theme2 <- function() {
+  theme(
+    plot.background = element_rect(fill = "#b8cfc6"),    
+    plot.margin = unit(c(1, 1, 1, 1), "cm"),
+    plot.title = element_text(family = "Broadway",face = "bold", size = 28,color = "#dedfe0"),
+    plot.subtitle = element_text(family = "Broadway", face = "bold", # size = 15,
+                                 color = "#b02c57"),
+    strip.text = element_text(family = "Satisfy",size = 13,face = "bold", color = "#b02c57"),
+    strip.background = element_rect(fill = "#bfbbb4", color = "#b02c57"),
+    panel.background = element_rect(fill = "#bfbbb4", color = "#b02c57"),
+    axis.title = element_text(family = "Roboto", face = "bold", 
+                              color = "#b02c57"),
+    plot.caption = element_text(family = "Roboto",size = 8,
+                                color = "#b02c57",margin = margin(t = 15)),
+    axis.text = element_text(family = "Roboto", color = "#b02c57"),
+    axis.title.x = element_text(margin = margin(t = 15), hjust = 1,size = 15, color = "#c6ced6"),
+    axis.title.y = element_text(margin = margin(r = 15), hjust = 1),
+    axis.ticks = element_blank(),
+    panel.grid = element_line(color = "#b02c57", linetype = "dashed"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    legend.text = element_text(colour = "#b02c57"),
+    legend.title = element_text(colour = "#b02c57"),
+  ) 
+}
+
+
 
 
 perguntas = c("Como você se identifica em relação ao gênero?",
