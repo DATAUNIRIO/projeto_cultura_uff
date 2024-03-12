@@ -27,6 +27,7 @@ ggplot(all_df, aes(percent, forcats::fct_rev(genero),fill=facet)) +
   theme_minimal()+
   ecoar_theme()
 
+ggsave("graficos/entrega1_genero.png",width = 20, height = 14, units = "cm")
 
 #   theme(
 # plot.background = element_rect(fill = "#b8cfc6"),    

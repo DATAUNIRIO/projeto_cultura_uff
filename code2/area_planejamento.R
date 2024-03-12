@@ -12,3 +12,6 @@ table(visuais$regiao)
 table(AP$regiao)
 
 AP %>% filter(regiao=='Região Leste') %>% print()
+
+
+table(visuais$regiao)

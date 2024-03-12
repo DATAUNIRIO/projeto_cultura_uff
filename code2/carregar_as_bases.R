@@ -23,6 +23,13 @@ table(visuais$como_voce_se_identifica_em_relacao_ao_genero)
 
 visuais$como_voce_se_identifica_em_relacao_ao_genero = gsub('EMPRESA',NA,visuais$como_voce_se_identifica_em_relacao_ao_genero)
 
+table(visuais$como_voce_se_identifica_em_relacao_a_raca)
+visuais$como_voce_se_identifica_em_relacao_a_raca = gsub('(Preto\\(a\\))','Preto(a)/Pardo(a)',visuais$como_voce_se_identifica_em_relacao_a_raca)
+visuais$como_voce_se_identifica_em_relacao_a_raca = gsub('^(Pardo\\(a\\))','Preto(a)/Pardo(a)',visuais$como_voce_se_identifica_em_relacao_a_raca)
+
+espetaculo$como_voce_se_identifica_em_relacao_a_raca = gsub('(Preto\\(a\\))','Preto(a)/Pardo(a)',espetaculo$como_voce_se_identifica_em_relacao_a_raca)
+espetaculo$como_voce_se_identifica_em_relacao_a_raca = gsub('^(Pardo\\(a\\))','Preto(a)/Pardo(a)',espetaculo$como_voce_se_identifica_em_relacao_a_raca)
+
 #---------------------------------------------------------------
 # ECOAR THEME
 #---------------------------------------------------------------
@@ -138,3 +145,4 @@ perguntas = c("Como você se identifica em relação ao gênero?",
               "Considerando o uso das tecnologias e redes digitais, quais foram os impactos no seu fazer cultural durante a pandemia do COVID-19 (uso das redes digitais para divulgação do trabalho, para oferta de serviço e/ou busca de oportunidades de emprego ou uso das plataformas digitais para disponibilização do trabalho, por exemplo)? (Você pode marcar mais de uma opção)",
               "O que você apontaria como maior dificuldade em seu trabalho na área da cultura?",
               "O que você apontaria como o maior potencial em seu trabalho na área da cultura?")
+

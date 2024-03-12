@@ -65,3 +65,5 @@ ggplot(all_df, aes(percent, idade,fill=facet)) +
   labs(y='Idade',x='Percentual',subtitle = 'Em qual faixa etária você se encontra?')+
   theme_minimal()+
   ecoar_theme()
+
+ggsave("graficos/entrega1_idade.png",width = 20, height = 14, units = "cm")

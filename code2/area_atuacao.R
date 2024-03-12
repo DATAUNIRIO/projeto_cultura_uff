@@ -1,5 +1,5 @@
-
-
+library(dplyr)
+library(stringr)
 
 table(visuais$qual_a_sua_principal_area_de_atuacao_no_campo_da_cultura_15)
 table(visuais$qual_a_sua_principal_area_de_atuacao_no_campo_da_cultura_16)
@@ -72,7 +72,9 @@ ggplot(d) +
        caption = "Fonte: ECOA", fill = "Categoria") +
   theme_minimal() +
   ecoar_theme2()
-  
+
+ggsave("graficos/entrega1_visual_categoria.png",width = 20, height = 14, units = "cm")
+
 remove(d,d1,d2,d3,d4,d5)
 #-----------------------------------------------------------------------------------------
  
@@ -131,6 +133,8 @@ ggplot(d) +
        caption = "Fonte: ECOA", fill = "Categoria") +
   theme_minimal() +
   ecoar_theme2()
+
+ggsave("graficos/entrega1_espetaculo_categoria.png",width = 20, height = 14, units = "cm")
 
 remove(d,d1,d2,d3,d4,d5) 
  
