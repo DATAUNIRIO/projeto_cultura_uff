@@ -5,9 +5,17 @@
 library(readxl)
 library(dplyr)
 library(janitor)
-espetaculo <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes do Espetáculo.xlsx") %>% clean_names()
-visuais <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes Visuais.xlsx") %>% clean_names()
 
+# linux
+#espetaculo <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes do Espetáculo.xlsx") %>% clean_names()
+#visuais <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes Visuais.xlsx") %>% clean_names()
+
+# windows casa da gloria
+espetaculo <- read_excel("C:/Users/Meu Computador/Documents/diretorioR/ecoar_uff/ECOA Niterói - Artes do Espetáculo.xlsx") %>% clean_names()
+visuais <- read_excel("C:/Users/Meu Computador/Documents/diretorioR/ecoar_uff/ECOA Niterói - Artes Visuais.xlsx") %>% clean_names()
+
+
+  
 names(espetaculo)
 
 
@@ -29,6 +37,63 @@ visuais$como_voce_se_identifica_em_relacao_a_raca = gsub('^(Pardo\\(a\\))','Pret
 
 espetaculo$como_voce_se_identifica_em_relacao_a_raca = gsub('(Preto\\(a\\))','Preto(a)/Pardo(a)',espetaculo$como_voce_se_identifica_em_relacao_a_raca)
 espetaculo$como_voce_se_identifica_em_relacao_a_raca = gsub('^(Pardo\\(a\\))','Preto(a)/Pardo(a)',espetaculo$como_voce_se_identifica_em_relacao_a_raca)
+
+
+#re-order factor levels 
+espetaculo$como_voce_se_identifica_em_relacao_a_raca <- factor(espetaculo$como_voce_se_identifica_em_relacao_a_raca, levels=c('Branco(a)','Preto(a)/Pardo(a)','Amarelo(a)','Indígena','Outros','Não sei / Não quero responder'))
+visuais$como_voce_se_identifica_em_relacao_a_raca <- factor(visuais$como_voce_se_identifica_em_relacao_a_raca, levels=c('Branco(a)','Preto(a)/Pardo(a)','Amarelo(a)','Indígena','Outros','Não sei / Não quero responder'))
+espetaculo$ha_quanto_tempo_voce_atua_nessa_area <- factor(espetaculo$ha_quanto_tempo_voce_atua_nessa_area, levels=c('Até 5 anos', 'Mais de 5 até 10 anos', 'Mais de 10 até 15 anos', 'Mais de 15 anos'))
+visuais$ha_quanto_tempo_voce_atua_nessa_area <- factor(visuais$ha_quanto_tempo_voce_atua_nessa_area, levels=c('Até 5 anos', 'Mais de 5 até 10 anos', 'Mais de 10 até 15 anos', 'Mais de 15 anos'))
+
+
+espetaculo = espetaculo %>%
+  mutate(
+    faixa_idade = case_when(
+      em_qual_faixa_etaria_voce_se_encontra=='18 a 21 anos' ~ "18 a 29 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='22 a 24 anos' ~ "18 a 29 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='25 a 29 anos' ~ "18 a 29 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='30 a 34 anos' ~ "30 a 39 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='35 a 39 anos' ~ "30 a 39 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='40 a 44 anos' ~ "40 a 49 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='45 a 49 anos' ~ "40 a 49 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='50 a 54 anos' ~ "50 a 60 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='55 a 60 anos' ~ "50 a 60 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='Mais de 60' ~ "Mais de 60 anos",
+      TRUE                      ~ "outros"))
+
+visuais = espetaculo %>%
+  mutate(
+    faixa_idade = case_when(
+      em_qual_faixa_etaria_voce_se_encontra=='18 a 21 anos' ~ "18 a 29 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='22 a 24 anos' ~ "18 a 29 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='25 a 29 anos' ~ "18 a 29 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='30 a 34 anos' ~ "30 a 39 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='35 a 39 anos' ~ "30 a 39 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='40 a 44 anos' ~ "40 a 49 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='45 a 49 anos' ~ "40 a 49 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='50 a 54 anos' ~ "50 a 60 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='55 a 60 anos' ~ "50 a 60 anos",
+      em_qual_faixa_etaria_voce_se_encontra=='Mais de 60' ~ "Mais de 60 anos",
+      TRUE                      ~ "outros"))
+
+#---------------------------------------------------------------
+# AREA DO PLANEJAMENTO
+#---------------------------------------------------------------
+
+AP <- read_excel("mapas/AP.xlsx") %>% clean_names()
+head(AP)
+
+visuais = visuais %>% rename(bairro=qual_seu_bairro)
+table(visuais$bairro)
+
+visuais = visuais %>% left_join(AP)
+
+
+espetaculo = espetaculo %>% rename(bairro=qual_seu_bairro)
+table(espetaculo$bairro)
+
+espetaculo = espetaculo %>% left_join(AP)
+table(espetaculo$regiao)
 
 #---------------------------------------------------------------
 # ECOAR THEME
