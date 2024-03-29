@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------------------
 # carregar
 #----------------------------------------------------------------------------------------
-
+library(stringr)
 library(readxl)
 library(dplyr)
 library(janitor)
@@ -11,23 +11,22 @@ library(janitor)
 #visuais <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes Visuais.xlsx") %>% clean_names()
 
 # windows casa da gloria
-espetaculo <- read_excel("C:/Users/Meu Computador/Documents/diretorioR/ecoar_uff/ECOA Niterói - Artes do Espetáculo.xlsx") %>% clean_names()
-visuais <- read_excel("C:/Users/Meu Computador/Documents/diretorioR/ecoar_uff/ECOA Niterói - Artes Visuais.xlsx") %>% clean_names()
+visuais <- read_excel("~/diretorioR/ecoar_uff/19_03_2024/Cópia Steven  ECOA Niterói - Artes Visuais (44 respostas).xlsx") %>% clean_names()
+espetaculo <- read_excel("~/diretorioR/ecoar_uff/19_03_2024/Cópia Steven ECOA Niterói - Artes do Espetáculo (104 respostas).xlsx") %>% clean_names()
 
-
-  
 names(espetaculo)
-
 
 table(espetaculo$autoriza_o_uso_da_informacao_para_finalidade_academica_e_cientifica)
 table(visuais$autoriza_o_uso_da_informacao_para_finalidade_academica_e_cientifica)
 
 #PRIMEIRA ENTREGA: Eixo de Análise (variáveis explicativas)
 
+table(espetaculo$como_voce_se_identifica_em_relacao_ao_genero_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas)
+table(visuais$como_voce_se_identifica_em_relacao_ao_genero_ex_mulher_homem_mulher_cis_mulher_trans_homem_cis_homem_trans_nao_binario_etc_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas)
 
+espetaculo$como_voce_se_identifica_em_relacao_ao_genero = espetaculo$como_voce_se_identifica_em_relacao_ao_genero_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas
+visuais$como_voce_se_identifica_em_relacao_ao_genero = visuais$como_voce_se_identifica_em_relacao_ao_genero_ex_mulher_homem_mulher_cis_mulher_trans_homem_cis_homem_trans_nao_binario_etc_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas
 
-table(espetaculo$como_voce_se_identifica_em_relacao_ao_genero)
-table(visuais$como_voce_se_identifica_em_relacao_ao_genero)
 
 visuais$como_voce_se_identifica_em_relacao_ao_genero = gsub('EMPRESA',NA,visuais$como_voce_se_identifica_em_relacao_ao_genero)
 
@@ -61,7 +60,7 @@ espetaculo = espetaculo %>%
       em_qual_faixa_etaria_voce_se_encontra=='Mais de 60' ~ "Mais de 60 anos",
       TRUE                      ~ "outros"))
 
-visuais = espetaculo %>%
+visuais = visuais %>%
   mutate(
     faixa_idade = case_when(
       em_qual_faixa_etaria_voce_se_encontra=='18 a 21 anos' ~ "18 a 29 anos",
@@ -211,3 +210,4 @@ perguntas = c("Como você se identifica em relação ao gênero?",
               "O que você apontaria como maior dificuldade em seu trabalho na área da cultura?",
               "O que você apontaria como o maior potencial em seu trabalho na área da cultura?")
 
+remove(AP)
