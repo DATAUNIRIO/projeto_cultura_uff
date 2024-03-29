@@ -11,8 +11,8 @@ library(janitor)
 #visuais <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes Visuais.xlsx") %>% clean_names()
 
 # windows casa da gloria
-visuais <- read_excel("~/diretorioR/ecoar_uff/19_03_2024/Cópia Steven  ECOA Niterói - Artes Visuais (44 respostas).xlsx") %>% clean_names()
-espetaculo <- read_excel("~/diretorioR/ecoar_uff/19_03_2024/Cópia Steven ECOA Niterói - Artes do Espetáculo (104 respostas).xlsx") %>% clean_names()
+visuais <- read_excel("~/diretorioR/ecoar_uff/29_03_2024/Cópia Steven  ECOA Niterói - Artes Visuais (44 respostas).xlsx") %>% clean_names()
+espetaculo <- read_excel("~/diretorioR/ecoar_uff/29_03_2024/Cópia Steven ECOA Niterói - Artes do Espetáculo (104 respostas).xlsx") %>% clean_names()
 
 names(espetaculo)
 
@@ -44,6 +44,9 @@ visuais$como_voce_se_identifica_em_relacao_a_raca <- factor(visuais$como_voce_se
 espetaculo$ha_quanto_tempo_voce_atua_nessa_area <- factor(espetaculo$ha_quanto_tempo_voce_atua_nessa_area, levels=c('Até 5 anos', 'Mais de 5 até 10 anos', 'Mais de 10 até 15 anos', 'Mais de 15 anos'))
 visuais$ha_quanto_tempo_voce_atua_nessa_area <- factor(visuais$ha_quanto_tempo_voce_atua_nessa_area, levels=c('Até 5 anos', 'Mais de 5 até 10 anos', 'Mais de 10 até 15 anos', 'Mais de 15 anos'))
 
+table(visuais$como_voce_se_identifica_em_relacao_ao_genero)
+visuais$como_voce_se_identifica_em_relacao_ao_genero <- factor(visuais$como_voce_se_identifica_em_relacao_ao_genero, levels=c('HOMEM CIS','MULHER CIS','GÊNERO FLUÍDO'))
+table(visuais$como_voce_se_identifica_em_relacao_ao_genero)
 
 espetaculo = espetaculo %>%
   mutate(

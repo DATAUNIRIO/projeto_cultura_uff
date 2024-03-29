@@ -1,17 +1,16 @@
 OK se possivel colocar 0.2 em 20% e 0.4 em 40%
-
 OK observar a ordem da cor (não sei e outros)
 OK incluir a area de atuação - AGUARDAR A NOVA BASE DE DADOS
 OK incluir a area de atuação com  a divisão uma/mais de uma - AGUARDAR A NOVA BASE DE DADOS
 
-categoria vs genero
-categoria vs idade
-categoria vs cor
-categoria vs area de planejamento
+OK categoria vs genero
+OK categoria vs idade
+OK categoria vs cor
+OK categoria vs area de planejamento
 
-colocar o genero fluido na direita na entrega 2
+OK colocar o genero fluido na direita na entrega 2
 colocar nota de rotape com o limite da pesquisa (genero fluido)
 
-nos cruzamentos colocar a versao 1
+OK nos cruzamentos colocar a versao 1
 
 OK 1. fazer somente artes de espetaculo no univariado (final da semana e/ou inicio da semana que vem)
