@@ -1,25 +1,25 @@
 reuniao eccoar
+
 entrega 1 cor
-tirar o jitter e colocar totalmente fora da barra
-mudar a cor do numero de preto parra vermelho
+OK tirar o jitter e colocar totalmente fora da barra
+OK mudar a cor do numero de preto para vermelho
 -----------------------------------------------
 entrega 1 - area de atuação
-colocar todas as multiplas linguagens em uma unica categoria
+OK colocar todas as multiplas linguagens em uma unica categoria
 
-sem nota de rodape
-"além das 5  linguagens listadas no gráfico
-foram informadas também as artes visuais e a produção"
-
-deixar a categoria produção
+OK sem nota de rodape
+OK "além das 5  linguagens listadas no gráfico foram informadas também as artes visuais e a produção"
+OK deixar a categoria produção
 
 -----------------------------------------------
-colocar barras verticais
-sem coordflip
+OK colocar barras verticais
+OK sem coordflip
 
 -----------------------------------------------
 Cruzamento por cor
-tirar o outros e não quero responder nos cruzamentos
+Ok tirar o outros e não quero responder nos cruzamentos
 -----------------------------------------------
 Cruzamento por AP
 não teve respondente na região leste
 VERIFICAR 5 areas e a regiao leste
+
