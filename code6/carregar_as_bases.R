@@ -78,6 +78,25 @@ visuais = visuais %>%
       em_qual_faixa_etaria_voce_se_encontra=='Mais de 60' ~ "Mais de 60 anos",
       TRUE                      ~ "outros"))
 
+
+#---------------------------------------------------------------
+# carga_de_trabalho_semanal_na_area_cultural
+# carga_de_trabalho_semanal_em outra_area_cultural
+#---------------------------------------------------------------
+visuais$trabalho_semanal_na_area_cultural = visuais$qual_e_a_sua_carga_de_trabalho_semanal_na_area_cultural_considerando_todo_o_processo_de_trabalho_pre_producao_producao_e_pos_producao
+visuais$trabalho_semanal_na_area_cultural = factor(visuais$trabalho_semanal_na_area_cultural, levels=c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos 39h','Mais de 40h'))
+table(visuais$trabalho_semanal_na_area_cultural)
+espetaculo$trabalho_semanal_na_area_cultural = espetaculo$qual_e_a_sua_carga_de_trabalho_semanal_na_area_cultural_considerando_todo_o_processo_de_trabalho_pre_producao_producao_e_pos_producao
+espetaculo$trabalho_semanal_na_area_cultural = factor(espetaculo$trabalho_semanal_na_area_cultural, levels=c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos 39h','Mais de 40h'))
+table(espetaculo$trabalho_semanal_na_area_cultural)
+
+visuais$trabalho_semanal_NAO_area_cultural = visuais$qual_e_a_sua_carga_de_trabalho_semanal_em_outra_area_que_nao_a_da_cultura
+visuais$trabalho_semanal_NAO_area_cultural = factor(visuais$trabalho_semanal_NAO_area_cultural, levels=c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos 39h','Mais de 40h'))
+table(visuais$trabalho_semanal_NAO_area_cultural)
+espetaculo$trabalho_semanal_NAO_area_cultural = espetaculo$qual_e_a_sua_carga_de_trabalho_semanal_em_outra_area_que_nao_a_da_cultura
+espetaculo$trabalho_semanal_NAO_area_cultural = factor(espetaculo$trabalho_semanal_NAO_area_cultural, levels=c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos 39h','Mais de 40h'))
+table(espetaculo$trabalho_semanal_NAO_area_cultural)
+
 #---------------------------------------------------------------
 # AREA DE ATUACAO
 #---------------------------------------------------------------
@@ -162,7 +181,7 @@ ecoar_theme2 <- function() {
     plot.caption = element_text(family = "Roboto",size = 8,
                                 color = "#b02c57",margin = margin(t = 15)),
     axis.text = element_text(family = "Roboto", color = "#b02c57"),
-    axis.title.x = element_text(margin = margin(t = 15), hjust = 1,size = 15),
+    axis.title.x = element_text(margin = margin(t = 15), hjust = 1),
     axis.title.y = element_text(margin = margin(r = 15), hjust = 1),
     axis.ticks = element_blank(),
     panel.grid = element_line(color = "#b02c57", linetype = "dashed"),

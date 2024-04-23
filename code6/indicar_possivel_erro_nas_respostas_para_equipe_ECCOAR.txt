@@ -1,0 +1,38 @@
+espetaculo %>% select(trabalho_semanal_NAO_area_cultural,trabalho_semanal_na_area_cultural,voce_trabalha_exclusivamente_na_area_cultural) %>% table()
+
+---------------------------------------------------------------------------------------------------------------------------- 
+voce_trabalha_exclusivamente_na_area_cultural = Não
+
+                                  trabalho_semanal_na_area_cultural
+trabalho_semanal_NAO_area_cultural Menos de 10h Mais de 10h e menos de 19h Mais de 20h e menos de 29h
+        Menos de 10h                          5                          1                          2
+        Mais de 10h e menos de 19h            0                          0                          0
+        Mais de 20h e menos de 29h            0                          0                          0
+        Mais de 30h e menos 39h               0                          0                          0
+        Mais de 40h                           4                          5                          3
+                                  trabalho_semanal_na_area_cultural
+trabalho_semanal_NAO_area_cultural Mais de 30h e menos 39h Mais de 40h
+        Menos de 10h                                     0           2
+        Mais de 10h e menos de 19h                       0           0
+        Mais de 20h e menos de 29h                       0           0
+        Mais de 30h e menos 39h                          0           0
+        Mais de 40h                                      1           2
+
+----------------------------------------------------------------------------------------------------------------------------
+
+voce_trabalha_exclusivamente_na_area_cultural = Sim
+
+                                  trabalho_semanal_na_area_cultural
+trabalho_semanal_NAO_area_cultural Menos de 10h Mais de 10h e menos de 19h Mais de 20h e menos de 29h
+        Menos de 10h                          1                          2                          0
+        Mais de 10h e menos de 19h            0                          0                          0
+        Mais de 20h e menos de 29h            0                          0                          0
+        Mais de 30h e menos 39h               0                          0                          0
+        Mais de 40h                           0                          0                          0
+                                  trabalho_semanal_na_area_cultural
+trabalho_semanal_NAO_area_cultural Mais de 30h e menos 39h Mais de 40h
+        Menos de 10h                                     1           0
+        Mais de 10h e menos de 19h                       0           0
+        Mais de 20h e menos de 29h                       0           0
+        Mais de 30h e menos 39h                          0           0
+        Mais de 40h                                      0           2
