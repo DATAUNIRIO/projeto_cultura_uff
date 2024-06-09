@@ -101,3 +101,22 @@ ggplot(tabela) +
 ggsave("graficos/entrega2_visuais_trabalho_exclusivo_genero_v3.png",width = 20, height = 14, units = "cm")
 
 remove(tabela)
+
+
+
+
+
+
+ggplot(tabela) +
+  aes(x = Var1, y = Freq, fill = Var2) +
+  geom_col() +
+  scale_fill_manual(values = c("#b02c57","#327fc7","#ec6d13"),name = "Categoria") +
+  labs(x = "Gênero", y = "Percentual", subtitle = "Artes Visuais: Você trabalha exclusivamente na \nárea cultural?", 
+       caption = "Fonte: ECOA", fill = "Categoria") +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  #facet_wrap(vars(Var1))+
+  ecoar_theme2()
+ggsave("graficos/entrega2_visuais_trabalho_exclusivo_genero_v3.png",width = 20, height = 14, units = "cm")
+
+remove(tabela)

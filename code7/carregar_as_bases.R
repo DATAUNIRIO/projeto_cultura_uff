@@ -6,11 +6,23 @@ library(readxl)
 library(dplyr)
 library(janitor)
 
+#----------------------------------------------------------------
 # linux
-espetaculo <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes do Espetáculo.xlsx") %>% clean_names()
-visuais <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes Visuais.xlsx") %>% clean_names()
+#----------------------------------------------------------------
 
+# versao com area de atuacao agrupada
+espetaculo <- read_excel("~/Área de Trabalho/ecoar_uff/nova_versao/Cópia Steven ECOA Niterói - Artes do Espetáculo (104 respostas).xlsx") %>% clean_names()
+visuais <- read_excel("~/Área de Trabalho/ecoar_uff/nova_versao/Cópia Steven ECOA Niterói - Artes Visuais (44 respostas).xlsx") %>% clean_names()
+
+# versao com area de atuacao original
+#espetaculo <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes do Espetáculo.xlsx") %>% clean_names() 
+#visuais <- read_excel("~/Área de Trabalho/ecoar_uff/ECOA Niterói - Artes Visuais.xlsx") %>% clean_names()
+
+
+
+#----------------------------------------------------------------
 # windows casa da gloria
+#----------------------------------------------------------------
 #visuais <- read_excel("~/diretorioR/ecoar_uff/29_03_2024/Cópia Steven  ECOA Niterói - Artes Visuais (44 respostas).xlsx") %>% clean_names()
 #espetaculo <- read_excel("~/diretorioR/ecoar_uff/29_03_2024/Cópia Steven ECOA Niterói - Artes do Espetáculo (104 respostas).xlsx") %>% clean_names()
 
@@ -21,8 +33,11 @@ table(visuais$autoriza_o_uso_da_informacao_para_finalidade_academica_e_cientific
 
 #PRIMEIRA ENTREGA: Eixo de Análise (variáveis explicativas)
 
-#espetaculo$como_voce_se_identifica_em_relacao_ao_genero = espetaculo$como_voce_se_identifica_em_relacao_ao_genero_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas
-#visuais$como_voce_se_identifica_em_relacao_ao_genero = visuais$como_voce_se_identifica_em_relacao_ao_genero_ex_mulher_homem_mulher_cis_mulher_trans_homem_cis_homem_trans_nao_binario_etc_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas
+table(espetaculo$como_voce_se_identifica_em_relacao_ao_genero_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas)
+table(visuais$como_voce_se_identifica_em_relacao_ao_genero_ex_mulher_homem_mulher_cis_mulher_trans_homem_cis_homem_trans_nao_binario_etc_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas)
+
+espetaculo$como_voce_se_identifica_em_relacao_ao_genero = espetaculo$como_voce_se_identifica_em_relacao_ao_genero_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas
+visuais$como_voce_se_identifica_em_relacao_ao_genero = visuais$como_voce_se_identifica_em_relacao_ao_genero_ex_mulher_homem_mulher_cis_mulher_trans_homem_cis_homem_trans_nao_binario_etc_preencha_em_letra_maiuscula_sem_abreviacoes_ou_acentos_cedilhas
 
 
 visuais$como_voce_se_identifica_em_relacao_ao_genero = gsub('EMPRESA',NA,visuais$como_voce_se_identifica_em_relacao_ao_genero)
@@ -40,6 +55,15 @@ espetaculo$como_voce_se_identifica_em_relacao_a_raca <- factor(espetaculo$como_v
 visuais$como_voce_se_identifica_em_relacao_a_raca <- factor(visuais$como_voce_se_identifica_em_relacao_a_raca, levels=c('Branco(a)','Preto(a)/Pardo(a)','Amarelo(a)','Indígena','Outros','Não sei / Não quero responder'))
 espetaculo$ha_quanto_tempo_voce_atua_nessa_area <- factor(espetaculo$ha_quanto_tempo_voce_atua_nessa_area, levels=c('Até 5 anos', 'Mais de 5 até 10 anos', 'Mais de 10 até 15 anos', 'Mais de 15 anos'))
 visuais$ha_quanto_tempo_voce_atua_nessa_area <- factor(visuais$ha_quanto_tempo_voce_atua_nessa_area, levels=c('Até 5 anos', 'Mais de 5 até 10 anos', 'Mais de 10 até 15 anos', 'Mais de 15 anos'))
+
+espetaculo$carga_de_trab_area_cultural = espetaculo$qual_e_a_sua_carga_de_trabalho_semanal_na_area_cultural_considerando_todo_o_processo_de_trabalho_pre_producao_producao_e_pos_producao
+espetaculo$carga_de_trab_area_cultural = gsub('Mais de 30h e menos 39h','Mais de 30h e menos de 39h',espetaculo$carga_de_trab_area_cultural)
+espetaculo$carga_de_trab_area_cultural = factor(espetaculo$carga_de_trab_area_cultural, levels = c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos de 39h','Mais de 40h'))
+               
+visuais$carga_de_trab_area_cultural = visuais$qual_e_a_sua_carga_de_trabalho_semanal_na_area_cultural_considerando_todo_o_processo_de_trabalho_pre_producao_producao_e_pos_producao
+visuais$carga_de_trab_area_cultural = gsub('Mais de 30h e menos 39h','Mais de 30h e menos de 39h',visuais$carga_de_trab_area_cultural)
+visuais$carga_de_trab_area_cultural = factor(visuais$carga_de_trab_area_cultural, levels = c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos de 39h','Mais de 40h'))
+table(visuais$carga_de_trab_area_cultural)
 
 table(visuais$como_voce_se_identifica_em_relacao_ao_genero)
 visuais$como_voce_se_identifica_em_relacao_ao_genero <- factor(visuais$como_voce_se_identifica_em_relacao_ao_genero, levels=c('HOMEM CIS','MULHER CIS','GÊNERO FLUÍDO'))
@@ -75,18 +99,53 @@ visuais = visuais %>%
       em_qual_faixa_etaria_voce_se_encontra=='Mais de 60' ~ "Mais de 60 anos",
       TRUE                      ~ "outros"))
 
+
+#---------------------------------------------------------------
+# carga_de_trabalho_semanal_na_area_cultural
+# carga_de_trabalho_semanal_em outra_area_cultural
+#---------------------------------------------------------------
+visuais$trabalho_semanal_na_area_cultural = visuais$qual_e_a_sua_carga_de_trabalho_semanal_na_area_cultural_considerando_todo_o_processo_de_trabalho_pre_producao_producao_e_pos_producao
+visuais$trabalho_semanal_na_area_cultural = factor(visuais$trabalho_semanal_na_area_cultural, levels=c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos 39h','Mais de 40h'))
+table(visuais$trabalho_semanal_na_area_cultural)
+espetaculo$trabalho_semanal_na_area_cultural = espetaculo$qual_e_a_sua_carga_de_trabalho_semanal_na_area_cultural_considerando_todo_o_processo_de_trabalho_pre_producao_producao_e_pos_producao
+espetaculo$trabalho_semanal_na_area_cultural = factor(espetaculo$trabalho_semanal_na_area_cultural, levels=c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos 39h','Mais de 40h'))
+table(espetaculo$trabalho_semanal_na_area_cultural)
+
+visuais$trabalho_semanal_NAO_area_cultural = visuais$qual_e_a_sua_carga_de_trabalho_semanal_em_outra_area_que_nao_a_da_cultura
+visuais$trabalho_semanal_NAO_area_cultural = factor(visuais$trabalho_semanal_NAO_area_cultural, levels=c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos 39h','Mais de 40h'))
+table(visuais$trabalho_semanal_NAO_area_cultural)
+espetaculo$trabalho_semanal_NAO_area_cultural = espetaculo$qual_e_a_sua_carga_de_trabalho_semanal_em_outra_area_que_nao_a_da_cultura
+espetaculo$trabalho_semanal_NAO_area_cultural = factor(espetaculo$trabalho_semanal_NAO_area_cultural, levels=c('Menos de 10h','Mais de 10h e menos de 19h','Mais de 20h e menos de 29h','Mais de 30h e menos 39h','Mais de 40h'))
+table(espetaculo$trabalho_semanal_NAO_area_cultural)
+
+#---------------------------------------------------------------
+# AREA DE ATUACAO
+#---------------------------------------------------------------
+# SE DER ERRO, A VERSAO DO ARQUIVO ESTÀ ERRADA. FAVOR ENTRAR NO GOOGLE SHEETS
+# colocar todas as multiplas linguagens em uma unica categoria
+espetaculo$area_de_atuacao = tolower(espetaculo$qual_a_sua_principal_area_de_atuacao_no_campo_da_cultura_16)
+table(espetaculo$area_de_atuacao)
+espetaculo$area_de_atuacao = gsub('múltiplas linguagens: música, teatro, artes visuais','múltiplas linguagens',espetaculo$area_de_atuacao)
+espetaculo$area_de_atuacao = gsub('múltiplas linguagens: produção','múltiplas linguagens',espetaculo$area_de_atuacao)
+espetaculo$area_de_atuacao = gsub('múltiplas linguagens: teatro, circo','múltiplas linguagens',espetaculo$area_de_atuacao)
+espetaculo$area_de_atuacao = gsub('múltiplas linguagens: teatro, dança, carnaval','múltiplas linguagens',espetaculo$area_de_atuacao)
+espetaculo$area_de_atuacao = gsub('múltiplas linguagens: teatro, dança, música','múltiplas linguagens',espetaculo$area_de_atuacao)
+table(espetaculo$area_de_atuacao)
 #---------------------------------------------------------------
 # AREA DO PLANEJAMENTO
 #---------------------------------------------------------------
 
 AP <- read_excel("mapas/AP.xlsx") %>% clean_names()
 head(AP)
+table(AP$regiao)
+
+AP %>% filter(regiao=='Região Leste')
 
 visuais = visuais %>% rename(bairro=qual_seu_bairro)
 table(visuais$bairro)
 
 visuais = visuais %>% left_join(AP)
-
+table(visuais$regiao)
 
 espetaculo = espetaculo %>% rename(bairro=qual_seu_bairro)
 table(espetaculo$bairro)
@@ -145,7 +204,7 @@ ecoar_theme2 <- function() {
     plot.caption = element_text(family = "Roboto",size = 8,
                                 color = "#b02c57",margin = margin(t = 15)),
     axis.text = element_text(family = "Roboto", color = "#b02c57"),
-    axis.title.x = element_text(margin = margin(t = 15), hjust = 1,size = 15, color = "#c6ced6"),
+    axis.title.x = element_text(margin = margin(t = 15), hjust = 1),
     axis.title.y = element_text(margin = margin(r = 15), hjust = 1),
     axis.ticks = element_blank(),
     panel.grid = element_line(color = "#b02c57", linetype = "dashed"),

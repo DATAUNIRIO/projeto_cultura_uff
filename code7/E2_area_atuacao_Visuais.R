@@ -91,7 +91,7 @@ ggplot(d) +
   #facet_wrap(vars(Var2))+
   ecoar_theme2()
 
-ggsave("graficos_v6/entrega2_visuais_area_atuacao_cor.png",width = 20, height = 14, units = "cm")
+ggsave("graficos_v7/entrega2_visuais_area_atuacao_cor.png",width = 20, height = 14, units = "cm")
 remove(d) 
 
 
@@ -120,5 +120,5 @@ ggplot(d) +
   #facet_wrap(vars(Var2))+
   ecoar_theme2()
 
-ggsave("graficos_v6/entrega2_visuais_area_atuacao_AP.png",width = 20, height = 14, units = "cm")
+ggsave("graficos_v7/entrega2_visuais_area_atuacao_AP.png",width = 20, height = 14, units = "cm")
 remove(d) 
