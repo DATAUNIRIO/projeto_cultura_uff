@@ -1,0 +1,13 @@
+Anotações 18/06/2024
+
+1 - Padronizar o título do gráfico
+2 - Ordenamento das variáveis dos gráficos individuais (invertido) tempo de atuação e idade
+
+
+"Artes do Espetáculo: Há financiamento para a existência do grupo?"
+
+"Artes Visuais: Referente aos últimos cinco anos, há/houve financiamento \npara a existência desse grupo/coletivo artístico?"
+
+
+g1 = g1 + theme(legend.spacing.x = unit(0.8, "cm"))
+g2 = g2 + theme(legend.spacing.x = unit(0.8, "cm"))
