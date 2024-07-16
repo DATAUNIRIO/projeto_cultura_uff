@@ -157,6 +157,20 @@ visuais$financiamento_grupo = visuais$referente_aos_ultimos_cinco_anos_ha_houve_
 visuais$financiamento_grupo = gsub('Não sei / Não quero responder', NA, visuais$financiamento_grupo)
 visuais$financiamento_grupo = gsub('Sim, financiamento público, Sim, financiamento público privado, Sim, financiamento privado, Sim, recursos próprios, Não há financiamento, Oferecendo meu material e manifestação gratuita.  Auto apoio.', NA, visuais$financiamento_grupo)
 
+# renda
+espetaculo$renda = espetaculo$qual_a_media_da_sua_renda_individual_mensal_levando_em_conta_os_salarios_anteriores_a_pandemia_considerando_o_salario_minimo_atual
+visuais$renda = visuais$considerando_o_salario_minimo_atual_r_1_302_qual_e_a_media_da_sua_renda_individual_mensal
+
+espetaculo$renda = gsub('Não sei / Não quero responder',NA,espetaculo$renda)
+espetaculo$renda = factor(espetaculo$renda, levels=c('Sem rendimento','Acima de 1 até 3 salários mínimos', 
+                                               'Acima de 3 até 4 salários mínimos', 'Acima de 4 até 6 salários mínimos',
+                                               'Acima de 6 até 8 salários mínimos','Mais de 8 salários mínimos'))
+visuais$renda = gsub('Não sei / Não quero responder',NA,visuais$renda)
+visuais$renda = factor(visuais$renda, levels=c('Sem rendimento','Acima de 1 até 3 salários mínimos', 
+'Acima de 3 até 4 salários mínimos', 'Acima de 4 até 6 salários mínimos',
+'Acima de 6 até 8 salários mínimos','Mais de 8 salários mínimos'))
+
+
 #---------------------------------------------------------------
 # AREA DO PLANEJAMENTO
 #---------------------------------------------------------------
