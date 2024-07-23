@@ -23,20 +23,3 @@ Sim, com recursos próprios
 
 4-  edital visuais agrupar em Sim e Nao
 
-EXCLUIR
-Auxílio Emergencial do Governo Federal
-Auxílio para empresas/MEI - Niterói
-Concorri a edital / editais, mas não fui contemplado
-MAIS DE UM / SEM AUXÍLIOS CULTURAIS: Auxílio para empresas/MEI - Niterói; Concorri a edital / editais, mas não fui contemplado
-MAIS DE UM: Auxílio Emergencial do Governo Federal, Auxílio para empresas/MEI - Niterói
-MAIS DE UM: Auxílio Emergencial do Governo Federal; Auxílio para empresas/MEI - Niterói
-Não sei / Não quero responder
-OUTROS: AUXÍLIO EMPRESARIAL EM MUNICÍPIO DE ORIGEM
-
-SEM AUXÍLIOS CULTURAIS: Auxílio Emergencial do Governo Federal; Auxílio para empresas/MEI - Niterói; Concorri a edital / editais, mas não fui contemplado
-SEM AUXÍLIOS CULTURAIS: Auxílio Emergencial do Governo Federal; Concorri a edital / editais, mas não fui contemplado
-SEM AUXÍLIOS CULTURAIS: Concorri a edital / editais, mas não fui contemplado; Não recebi auxílio, nem participei de nenhum edital público
-SEM AUXÍLIOS CULTURAIS: Concorri a edital / editais, mas não fui contemplado; Solicitei auxílio e não recebi
-SEM AUXÍLIOS CULTURAIS: Não recebi auxílio, nem participei de nenhum edital público; Solicitei auxílio e não recebi
-Solicitei auxílio e não recebi
-
