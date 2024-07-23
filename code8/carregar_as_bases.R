@@ -5,7 +5,8 @@ library(stringr)
 library(readxl)
 library(dplyr)
 library(janitor)
-
+library(ggplot2)
+library(ggpubr)
 #----------------------------------------------------------------
 # linux
 #----------------------------------------------------------------

@@ -28,14 +28,17 @@ Há financiamento para a existência do grupo?
 QUARTA ENTREGA: CRUZAMENTOS POR TODAS AS VARIÁVEIS
 Como se dá o seu vínculo trabalhista na área cultural? (IMPORTANTE TB CRUZAR COM O “Você trabalha exclusivamente na área cultural?”)
 Renda (IMPORTANTE TB CRUZAR COM O “Você trabalha exclusivamente na área cultural?”)
+
 Você participa de alguma organização de classe na área da cultura? DIREITO À REPRESENTAÇÃO
 Todos os seus trabalhos na área cultural se firmam a partir de contrato? 
 Você já teve contratos de trabalho na área cultural desrespeitados?
 
 QUINTA ENTREGA: CRUZAMENTOS POR TODAS AS VARIÁVEIS
-Você recebeu e/ou participou de algum edital público? (REVER A VARIÁVEL. POSSIBILIDADE DE NOVA VERSÃO DA BASE DE DADOS)
 Pensando em sua aposentadoria, você contribui para o INSS?
 Você contribui para a previdência privada ou complementar?
+
+Você recebeu e/ou participou de algum edital público? (REVER A VARIÁVEL. POSSIBILIDADE DE NOVA VERSÃO DA BASE DE DADOS)
+
 
 
 

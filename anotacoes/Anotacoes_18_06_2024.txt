@@ -4,9 +4,39 @@ Anotações 18/06/2024
 2 - Ordenamento das variáveis dos gráficos individuais (invertido) tempo de atuação e idade
 
 
-"Artes do Espetáculo: Qual a média da sua renda individual mensal levando em conta os salários anteriores a pandemia?"
-"Artes Visuais: Qual é a média da sua renda individual mensal?"
+---------------------------------------------------------------------------------------
 
+Anotações 16/07/2024
 
-g1 = g1 + theme(legend.spacing.x = unit(0.8, "cm"))
-g2 = g2 + theme(legend.spacing.x = unit(0.8, "cm"))
+1 - alinhamento do rótulo do eixo x na pergunta do trabalho exclusivo com víncullo trab
+
+2 - Refazer todos os gráficos de renda com o seguinte rótulo: 
+Acima de 1 até 3 salário minimos = Acima de 1 SM até 3 SM
+colocar uma nota de rodapé SM = Salário Mínimo
+
+3 - Refazer todos graficos a variável financiamento do grupo
+Agrupar financiamento público e público privado
+
+Não há financiamento
+Sim, há financiamento público e/ou privado
+Sim, com recursos próprios
+
+4-  edital visuais agrupar em Sim e Nao
+
+EXCLUIR
+Auxílio Emergencial do Governo Federal
+Auxílio para empresas/MEI - Niterói
+Concorri a edital / editais, mas não fui contemplado
+MAIS DE UM / SEM AUXÍLIOS CULTURAIS: Auxílio para empresas/MEI - Niterói; Concorri a edital / editais, mas não fui contemplado
+MAIS DE UM: Auxílio Emergencial do Governo Federal, Auxílio para empresas/MEI - Niterói
+MAIS DE UM: Auxílio Emergencial do Governo Federal; Auxílio para empresas/MEI - Niterói
+Não sei / Não quero responder
+OUTROS: AUXÍLIO EMPRESARIAL EM MUNICÍPIO DE ORIGEM
+
+SEM AUXÍLIOS CULTURAIS: Auxílio Emergencial do Governo Federal; Auxílio para empresas/MEI - Niterói; Concorri a edital / editais, mas não fui contemplado
+SEM AUXÍLIOS CULTURAIS: Auxílio Emergencial do Governo Federal; Concorri a edital / editais, mas não fui contemplado
+SEM AUXÍLIOS CULTURAIS: Concorri a edital / editais, mas não fui contemplado; Não recebi auxílio, nem participei de nenhum edital público
+SEM AUXÍLIOS CULTURAIS: Concorri a edital / editais, mas não fui contemplado; Solicitei auxílio e não recebi
+SEM AUXÍLIOS CULTURAIS: Não recebi auxílio, nem participei de nenhum edital público; Solicitei auxílio e não recebi
+Solicitei auxílio e não recebi
+
