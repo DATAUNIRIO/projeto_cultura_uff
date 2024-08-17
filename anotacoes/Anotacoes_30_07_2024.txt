@@ -1,0 +1,45 @@
+Anotações da reunião 30/07/2024
+
+1. contratos desrespeitados
+trocar a legenda dos gráficos (com visuais e espetáculo)
+"quase sempre meus contratos são desrespeitados" por
+"quase sempre meus \n contratos são desrespeitados"
+
+2. Tempo de atuação DE TODOS OS GRÁFICOS
+colocar legenda no eixo X informando que é o tempo de atuação
+
+3. lembrete - a pergunta de contratos desrespeitados mudou porque no espetáculo a pergunta não foi compreendida (muitos não tinham contratos assinados - influência da pergunta anterior na resposta dessa.)
+
+4. fazer os dois gráficos de editais e não fazer o cruzamento.
+
+5. editais. fazer um só para visuais e dois para artes do espetáculo.
+fazer artes do espetáculo por AP.
+
+
+---------------------------------------------------------------------------------------
+
+Anotações 18/06/2024
+
+1 - Padronizar o título do gráfico
+2 - Ordenamento das variáveis dos gráficos individuais (invertido) tempo de atuação e idade
+
+
+---------------------------------------------------------------------------------------
+
+Anotações 16/07/2024
+
+1 - alinhamento do rótulo do eixo x na pergunta do trabalho exclusivo com víncullo trab
+
+2 - Refazer todos os gráficos de renda com o seguinte rótulo: 
+Acima de 1 até 3 salário minimos = Acima de 1 SM até 3 SM
+colocar uma nota de rodapé SM = Salário Mínimo
+
+3 - Refazer todos graficos a variável financiamento do grupo
+Agrupar financiamento público e público privado
+
+Não há financiamento
+Sim, há financiamento público e/ou privado
+Sim, com recursos próprios
+
+4-  edital visuais agrupar em Sim e Nao
+
