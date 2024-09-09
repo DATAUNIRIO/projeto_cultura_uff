@@ -242,13 +242,17 @@ AP <- read_excel("mapas/AP.xlsx") %>% clean_names()
 head(AP)
 table(AP$regiao)
 
-AP %>% filter(regiao=='Região Leste')
+#AP %>% filter(regiao=='Região Leste')
 
 visuais = visuais %>% rename(bairro=qual_seu_bairro)
 table(visuais$bairro)
 
 visuais = visuais %>% left_join(AP)
+#visuais = visuais %>% full_join(AP)
 table(visuais$regiao)
+table(visuais$bairro,visuais$regiao)
+
+
 
 espetaculo = espetaculo %>% rename(bairro=qual_seu_bairro)
 table(espetaculo$bairro)
