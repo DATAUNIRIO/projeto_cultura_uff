@@ -1,0 +1,30 @@
+
+reuniao 30/07/2024 
+
+1. contratos desrespeitados
+trocar a legenda dos gráficos (com visuais e espetáculo)
+"quase sempre meus contratos são desrespeitados" por 
+"quase sempre meus \n contratos são desrespeitados" 
+
+2. Tempo de atuação DE TODOS OS GRÁFICOS
+colocar legenda no eixo X informando que é o tempo de atuação
+
+3. lembrete - a pergunta de contratos desrespeitados mudou porque no espetaculo a pergunta não foi compreendida (muitos não tinha contratos assinados - influência da pergunta anterior na resposta dessa.)
+
+4. fazer os dois gráficos de editais e não fazer o cruzamento.
+
+5. editais. fazer um só para visuais e dois para artes do espetáculo.
+fazer artes do espetáculo por AP.
+
+próxima reunião dia 20/08/2024 as 18:00
+
+
+---------------------------------------------------
+titulo do gráfico 
+corrigir 
+"você contribui para o previdencia?"
+
+
+Gaussian mixture models,
+burning rules fuzzy logic
+Large Language Models (LLMs) in R
