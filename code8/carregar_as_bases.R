@@ -5,7 +5,8 @@ library(stringr)
 library(readxl)
 library(dplyr)
 library(janitor)
-
+library(ggplot2)
+library(ggpubr)
 #----------------------------------------------------------------
 # linux
 #----------------------------------------------------------------
@@ -84,6 +85,7 @@ espetaculo = espetaculo %>%
       em_qual_faixa_etaria_voce_se_encontra=='Mais de 60' ~ "Mais de 60 anos",
       TRUE                      ~ "outros"))
 
+
 visuais = visuais %>%
   mutate(
     faixa_idade = case_when(
@@ -98,6 +100,67 @@ visuais = visuais %>%
       em_qual_faixa_etaria_voce_se_encontra=='55 a 60 anos' ~ "50 a 60 anos",
       em_qual_faixa_etaria_voce_se_encontra=='Mais de 60' ~ "Mais de 60 anos",
       TRUE                      ~ "outros"))
+
+
+espetaculo = espetaculo %>%
+  mutate(
+    classe = case_when(
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='NENHUM' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Não.' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Nenhum' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='NENHUMA' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Não participo' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='NÃO PARTICIPO DE NENHUMA ORGANIZAÇÃO' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='não participo no momento' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Nao' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='NAO' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Não' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='NÃO' ~ "Não",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Já participei, neste momento não!' ~ "Não",
+      
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Associação' ~ "Sim",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Câmara Setorial de Teatro e Circo de Niterói' ~ "Sim",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Coletivo' ~ "Sim",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Cooperativa' ~ "Sim",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Sindicato' ~ "Sim",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Selo Musical e Distribuidora' ~ "Sim",
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='Não sei / Não quero responder' ~ NA,
+      voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura=='-' ~ NA,
+      TRUE                      ~ "outros"))
+visuais$classe =  gsub('Não sei/ Não quero responder',NA,visuais$voce_participa_de_alguma_organizacao_de_classe_na_area_da_cultura)
+
+espetaculo$contrato = gsub('Não sei / Não quero responder',NA, espetaculo$todos_os_seus_trabalhos_na_area_cultural_se_firmam_a_partir_de_contrato)
+visuais$contrato = gsub('Não sei / Não quero responder',NA, visuais$todos_os_seus_trabalhos_na_area_cultural_se_firmam_a_partir_de_contrato)
+                          
+espetaculo$contrato = factor(espetaculo$contrato, levels =  c('Nunca','Algumas vezes',  'Quase sempre','Sempre')) 
+visuais$contrato = factor(visuais$contrato, levels =  c('Nunca','Algumas vezes',  'Quase sempre','Sempre')) 
+
+
+espetaculo$desrespeitado = gsub('Não sei / Não quero responder',NA, espetaculo$voce_ja_teve_contratos_de_trabalho_na_area_cultural_desrespeitados)
+visuais$desrespeitado = gsub('Não sei / Não quero responder',NA, visuais$se_voce_ja_teve_contratos_de_trabalho_na_area_cultural_responda)
+
+
+espetaculo$desrespeitado = gsub('Meus contratos nunca são desrespeitados' ,'Meus contratos nunca \nsão desrespeitados',espetaculo$desrespeitado)
+espetaculo$desrespeitado = gsub('Algumas vezes meus contratos são desrespeitados' ,'Algumas vezes meus contratos \nsão desrespeitados',espetaculo$desrespeitado)
+espetaculo$desrespeitado = gsub('Quase sempre meus contratos são desrespeitados','Quase sempre meus contratos \nsão desrespeitados',espetaculo$desrespeitado) 
+espetaculo$desrespeitado = gsub('Meus contratos sempre são desrespeitados','Meus contratos sempre \nsão desrespeitados',espetaculo$desrespeitado)
+
+
+visuais$desrespeitado = gsub('Meus contratos nunca são desrespeitados' ,'Meus contratos nunca \nsão desrespeitados',visuais$desrespeitado)
+visuais$desrespeitado = gsub('Algumas vezes meus contratos são desrespeitados' ,'Algumas vezes meus contratos \nsão desrespeitados',visuais$desrespeitado)
+visuais$desrespeitado = gsub('Quase sempre meus contratos são desrespeitados','Quase sempre meus contratos \nsão desrespeitados',visuais$desrespeitado) 
+visuais$desrespeitado = gsub('Meus contratos sempre são desrespeitados','Meus contratos sempre \nsão desrespeitados',visuais$desrespeitado)
+
+espetaculo$desrespeitado = factor(espetaculo$desrespeitado, levels =  c('Meus contratos nunca \nsão desrespeitados', 
+                                                                        'Algumas vezes meus contratos \nsão desrespeitados', 
+                                                                        'Quase sempre meus contratos \nsão desrespeitados', 
+                                                                        'Meus contratos sempre \nsão desrespeitados')) 
+visuais$desrespeitado = factor(visuais$desrespeitado, levels =  c('Meus contratos nunca \nsão desrespeitados', 
+                                                                  'Algumas vezes meus contratos \nsão desrespeitados', 
+                                                                  'Quase sempre meus contratos \nsão desrespeitados', 
+                                                                  'Meus contratos sempre \nsão desrespeitados') ) 
+
+
 
 
 #---------------------------------------------------------------
@@ -157,6 +220,20 @@ visuais$financiamento_grupo = visuais$referente_aos_ultimos_cinco_anos_ha_houve_
 visuais$financiamento_grupo = gsub('Não sei / Não quero responder', NA, visuais$financiamento_grupo)
 visuais$financiamento_grupo = gsub('Sim, financiamento público, Sim, financiamento público privado, Sim, financiamento privado, Sim, recursos próprios, Não há financiamento, Oferecendo meu material e manifestação gratuita.  Auto apoio.', NA, visuais$financiamento_grupo)
 
+# renda
+espetaculo$renda = espetaculo$qual_a_media_da_sua_renda_individual_mensal_levando_em_conta_os_salarios_anteriores_a_pandemia_considerando_o_salario_minimo_atual
+visuais$renda = visuais$considerando_o_salario_minimo_atual_r_1_302_qual_e_a_media_da_sua_renda_individual_mensal
+
+espetaculo$renda = gsub('Não sei / Não quero responder',NA,espetaculo$renda)
+espetaculo$renda = factor(espetaculo$renda, levels=c('Sem rendimento','Acima de 1 até 3 salários mínimos', 
+                                               'Acima de 3 até 4 salários mínimos', 'Acima de 4 até 6 salários mínimos',
+                                               'Acima de 6 até 8 salários mínimos','Mais de 8 salários mínimos'))
+visuais$renda = gsub('Não sei / Não quero responder',NA,visuais$renda)
+visuais$renda = factor(visuais$renda, levels=c('Sem rendimento','Acima de 1 até 3 salários mínimos', 
+'Acima de 3 até 4 salários mínimos', 'Acima de 4 até 6 salários mínimos',
+'Acima de 6 até 8 salários mínimos','Mais de 8 salários mínimos'))
+
+
 #---------------------------------------------------------------
 # AREA DO PLANEJAMENTO
 #---------------------------------------------------------------
@@ -165,13 +242,17 @@ AP <- read_excel("mapas/AP.xlsx") %>% clean_names()
 head(AP)
 table(AP$regiao)
 
-AP %>% filter(regiao=='Região Leste')
+#AP %>% filter(regiao=='Região Leste')
 
 visuais = visuais %>% rename(bairro=qual_seu_bairro)
 table(visuais$bairro)
 
 visuais = visuais %>% left_join(AP)
+#visuais = visuais %>% full_join(AP)
 table(visuais$regiao)
+table(visuais$bairro,visuais$regiao)
+
+
 
 espetaculo = espetaculo %>% rename(bairro=qual_seu_bairro)
 table(espetaculo$bairro)
