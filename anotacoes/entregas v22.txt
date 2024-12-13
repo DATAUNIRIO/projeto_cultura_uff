@@ -1,0 +1,60 @@
+
+PRIMEIRA ENTREGA: Eixo de Análise (variáveis explicativas)
+Gênero
+Cor/Raça
+Idade (faixas de 10 anos)
+Área de atuação
+Área de Planejamento
+Tempo de atuação
+
+SEGUNDA ENTREGA: CRUZAMENTOS
+Variáveis de interesse (por ordem de prioridade)
+Dentro da área cultural, em qual categoria seu trabalho se enquadra? (apenas para medir “MAIS DE UM” – a fim de perceber quais subáreas de artes de espetáculo tem tendência a concentrar na atuação individual diferentes inserções laborais) 
+
+categoria vs genero
+categoria vs idade
+categoria vs cor
+categoria vs area de planejamento
+
+Você trabalha exclusivamente na área cultural? DUPLA JORNADA
+Carga de trabalho semanal na área cultural?
+
+TERCEIRA ENTREGA: CRUZAMENTOS POR TERRITÓRIO
+Variáveis de interesse (por ordem de prioridade)
+Faz parte de algum grupo artístico?
+Há quanto tempo esse grupo existe?
+Há financiamento para a existência do grupo?
+
+QUARTA ENTREGA: CRUZAMENTOS POR TODAS AS VARIÁVEIS
+Como se dá o seu vínculo trabalhista na área cultural? (IMPORTANTE TB CRUZAR COM O “Você trabalha exclusivamente na área cultural?”)
+Renda (IMPORTANTE TB CRUZAR COM O “Você trabalha exclusivamente na área cultural?”)
+<<<<<<< HEAD
+Você participa de alguma organização de classe na área da cultura? DIREITO À REPRESENTAÇÃO
+Todos os seus trabalhos na área cultural se firmam a partir de contrato? 
+Você já teve contratos de trabalho na área cultural desrespeitados?
+
+QUINTA ENTREGA: CRUZAMENTOS POR TODAS AS VARIÁVEIS
+Você recebeu e/ou participou de algum edital público? (REVER A VARIÁVEL. POSSIBILIDADE DE NOVA VERSÃO DA BASE DE DADOS)
+Pensando em sua aposentadoria, você contribui para o INSS?
+Você contribui para a previdência privada ou complementar?
+
+=======
+
+Você participa de alguma organização de classe na área da cultura? DIREITO À REPRESENTAÇÃO
+Todos os seus trabalhos na área cultural se firmam a partir de contrato?
+Você já teve contratos de trabalho na área cultural desrespeitados?
+Se você já teve contratos de trabalho na área cultural, responda: 
+
+
+
+
+QUINTA ENTREGA: CRUZAMENTOS POR TODAS AS VARIÁVEIS
+Pensando em sua aposentadoria, você contribui para o INSS?
+Você contribui para a previdência privada ou complementar?
+
+Você recebeu e/ou participou de algum edital público? (REVER A VARIÁVEL. POSSIBILIDADE DE NOVA VERSÃO DA BASE DE DADOS)
+
+
+>>>>>>> 475d903c56c5d49b40abc743e1000e3d8fa36eb8
+
+
